@@ -1,0 +1,141 @@
+<section class="container pb-1">
+
+
+    <div class="d-flex justify-content-center align-items-center my-4">
+
+        <div class="rounded col-lg-8 col-sm-8 shadow p-0" style="background-color: #D9D9D9;">
+
+            <div class="rounded-top border border-dark bg-white py-2 d-flex justify-content-center align-items-center">
+                <span style="color: #FFD700; font-weight: 700; font-size: large;">NUEVO MINERO</span>
+            </div>
+
+            <div class="rounded-bottom p-2 border border-dark">
+
+                <form [formGroup]="mineroForm" (ngSubmit)="submit()" class="p-5">
+
+                    <div class="row mb-3" formGroupName="persona">
+                        <div class="col">
+                            <label for="tipoId" class="form-label">TIPO IDENTIFICACIÓN:</label>
+                            <select formControlName="tipoDocumento" class="form-select" style="background-color: #FFD700;" id="tipoId" name="tipoId">
+                                <option value="0">--SELECCIONE--</option>
+                                <option value="1">CÉDULA</option>
+                                <option value="2">T. EXTRANJERÍA</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label for="identificacion" class="form-label">IDENTIFICACIÓN:</label>
+                            <input formControlName="numDocumento" type="text" class="form-control" id="identificacion" name="username"
+                                aria-describedby="identificacion" />
+                        </div>
+                    </div>
+
+                    <div class="row mb-3" formGroupName="persona">
+                        <div class="col">
+                            <label for="username" class="form-label">NOMBRES:</label>
+                            <input formControlName="nombres" type="text" class="form-control" id="username"
+                                name="username" aria-describedby="emailHelp" />
+                        </div>
+                        <div class="col">
+                            <label for="lastname" class="form-label">APELLIDOS:</label>
+                            <input formControlName="apellidos" type="text" class="form-control" id="lastname" name="lastname"
+                                aria-describedby="last name" />
+                        </div>
+                    </div>
+
+                    <!-- <div class="row mb-3">
+                        <div class="col">
+                            <label for="username" class="form-label">OTROS NOMBRES:</label>
+                            <input type="text" class="form-control" id="username" name="username"
+                                aria-describedby="emailHelp" />
+                        </div>
+                        <div class="col">
+                            <label for="username" class="form-label">SEGUNDO APELLIDO:</label>
+                            <input type="text" class="form-control" id="username" name="username"
+                                aria-describedby="emailHelp" />
+                        </div>
+                    </div> -->
+
+                    <div class="row mb-3" formGroupName="persona">
+                        <div class="col">
+                            <label for="direccion" class="form-label">DIRECCIÓN:</label>
+                            <input formControlName="direccion" type="text" class="form-control" id="direccion" name="direccion"
+                                aria-describedby="direccion" />
+                        </div>
+                        <div class="col">
+                            <label for="telefono" class="form-label">TELÉFONO:</label>
+                            <input formControlName="telefono" type="text" class="form-control" id="telefono" name="telefono"
+                                aria-describedby="telefono" />
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col" formGroupName="persona">
+                            <label for="email" class="form-label">EMAIL:</label>
+                            <input formControlName="email" type="email" class="form-control" id="email" name="email"
+                                aria-describedby="email" />
+                        </div>
+                        <div class="col">
+                            <label for="vencimiento_rut" class="form-label">VENCIMIENTO RUT:</label>
+                            <input formControlName="vencimientoRut" type="date" class="form-control" id="vencimiento_rut" name="vencimiento_rut"
+                                aria-describedby="vencimiento_rut" />
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="certificacion_alcaldia" class="form-label">CERTIFICADO ALCALDÍA:</label>
+                            <input formControlName="certificacionAlcaldia" type="date" class="form-control" id="certificacion_alcaldia" name="certificacion_alcaldia"
+                                aria-describedby="emailHelp" />
+                        </div>
+                        <div class="col">
+                            <label for="tipo_minero" class="form-label">TIPO MINERO:</label>
+                            <select formControlName="tipoMinero" class="form-select" style="background-color: #FFD700;" id="tipo_minero" name="tipo_minero">
+                                <option value="0">--SELECCIONE--</option>
+                                <option value="1">BAREQUERO</option>
+                                <option value="2">CHATARRERO</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- <div class="row mb-3">
+                        <div class="col-6">
+                            <label for="username" class="form-label">ESTADO:</label>
+                            <select formControlName="certificacion_alcaldia" class="form-select" style="background-color: #FFD700;" id="tipoId" name="tipoId">
+                                <option value="">--ESTADO--</option>
+                                <option value="">ACTIVO</option>
+                                <option value="">INACTIVO</option>
+                            </select>
+                        </div>
+
+                    </div> -->
+
+
+                    <div class="row p-3">
+                        <div class="col text-center">
+                            <button routerLink="" class="btn" style="background-color: #000000; min-width: 220px;">
+                                <span class="h6" style="color: #FFD700;">CANCELAR</span>
+                            </button>
+                        </div>
+                        <div class="col text-center">
+                            <button type="submit" [disabled]="!mineroForm.valid" class="btn" style="background-color: #FFD700; min-width: 220px;">
+                                <span class="h6">INGRESAR</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+
+
+
+        </div>
+
+        <!-- espacio  para el footer -->
+
+    </div>
+
+
+
+
+</section>

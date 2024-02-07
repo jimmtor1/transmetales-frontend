@@ -1,0 +1,49 @@
+
+
+   <header>
+
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid" style="height: 40px;">
+        <a class="navbar-brand">
+          <h3>TRANSMETALES</h3>
+        </a>
+        <div class="d-flex">
+          <img src="/assets/img/User.png" style="width: 40px;" alt="">
+        </div>
+      </div>
+    </nav>
+
+  </header>
+  
+  <div class="row m-0" style="background-color: #D9D9D9;">
+    <div class="col-2 d-flex justify-content-center">
+      <ul class="nav flex-column mt-2" style="width: 98%;">
+        <li class="nav-item mb-2" style="background-color: #FFD700;">
+          <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+        </li>
+        <li class="nav-item mb-2" style="background-color: #FFD700;">
+          <a class="nav-link active" aria-current="page" routerLink="minero">Crear Minero</a>
+        </li>
+        <li class="nav-item mb-2" style="background-color: #FFD700;">
+          <a class="nav-link active" aria-current="page" routerLink="compra" >Comprar</a>
+        </li>
+        <li class="nav-item mb-2" style="background-color: #FFD700;">
+          <a class="nav-link active" aria-current="page" routerLink="barra" >Barra</a>
+        </li>
+        <li class="nav-item mb-2" style="background-color: #FFD700;">
+          <a class="nav-link active" aria-current="page" routerLink="traslado" >Traslado</a>
+        </li>
+        
+        <!-- <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>   -->
+      </ul>
+    </div>
+
+    <div class="col-10 bg-warning">
+      <router-outlet></router-outlet>
+    </div>
+    
+  </div>
+
+

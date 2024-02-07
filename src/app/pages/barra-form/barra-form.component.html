@@ -1,0 +1,117 @@
+<section class="container pb-1">
+
+    <div class="d-flex justify-content-center align-items-center my-4">
+
+        <div class="rounded col-lg-8 col-sm-8 shadow p-0" style="background-color: white;">
+
+            <div class="rounded-top border border-dark bg-white py-2 d-flex justify-content-center align-items-center">
+                <span style="color: #FFD700; font-weight: 700; font-size: large;">FUNDIR COMPRAS</span>
+            </div>
+
+            <div class="rounded-bottom p-2 border border-dark">
+
+               
+
+                    <!-- INFORMACIÓN DE COMPRA:
+                    <div style="background-color: #D9D9D9;" class="p-2 mb-3">
+
+                        <div class="row mb-3">
+
+                            <div class="col-5">
+                                <input type="text" class="form-control" placeholder="Num. Compra" id="compra" name="compra"
+                                    aria-describedby="numero de compra" />
+                            </div>
+
+                            <div class="col-4">
+                                <button style="background-color: #FFD700; font-size: medium;" class="form-control"
+                                    name="buscar" aria-describedby="buscarButton">Buscar</button>
+                            </div>
+
+                        </div>
+
+                    </div> -->
+
+                    LISTA DE COMPRAS:
+                    <div style="background-color: #D9D9D9;" class="p-2 mb-3">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Gramos</th>
+                                    <th scope="col">Leyau</th>
+                                    <th scope="col">Leyag</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (compra of compras; track compra.id) {
+                                    <tr>
+                                        <th scope="row">{{compra.id}}</th>
+                                        <td>{{compra.gramos}}</td>
+                                        <td>{{compra.leyOro}}</td>
+                                        <td>{{compra.leyPlata}}</td>
+                                        <td>
+                                            <input type="checkbox" (change)="seleccionarCompra(compra.id!)">
+                                        </td>
+                                    </tr>
+                                }                               
+                            </tbody>
+                        </table>
+
+                    </div>
+
+
+                    <div style="background-color: #D9D9D9;" class="py-3 px-5 mb-3">
+
+                        <div class="row">
+
+                            <div class="col">
+                                <label for="gramosR">GRAMOS RESULTANTES</label>
+                                <input type="text" class="form-control fs-5"
+                                    aria-describedby="neto a cobrar" disabled="true" value="{{totalGramos}}" />
+                            </div>
+
+                            <div class="col">
+                                <label for="leyoro">LEY ORO</label>
+                                <input type="text" class="form-control fs-5" disabled="true" value="{{totalLeyoro}}"
+                                    aria-describedby="Total ley oro" />
+                            </div>
+
+                            <div class="col">
+                                <label for="leyplata">LEY PLATA</label>
+                                <input type="text" class="form-control fs-5" disabled="true" value="{{totalLeyplata}}"
+                                    aria-describedby="Total ley plata" />
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="row p-3">
+                        <div class="col text-center">
+                            <a routerLink="" class="btn" style="background-color: #000000; min-width: 220px;">
+                                <span class="h6" style="color: #FFD700;">CANCELAR</span>
+                            </a>
+                        </div>
+                        <div class="col text-center">
+                            <button (click)="submit()" class="btn" style="background-color: #FFD700; min-width: 220px;">
+                                <span class="h6">INGRESAR</span>
+                            </button>
+                        </div>
+
+                    </div>
+                
+            </div>
+
+
+
+        </div>
+
+        <!-- espacio  para el footer -->
+
+    </div>
+
+
+</section>

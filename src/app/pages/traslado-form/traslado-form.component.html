@@ -1,0 +1,67 @@
+<section class="container pb-1">
+
+    <div class="d-flex justify-content-center align-items-center my-4">
+
+        <div class="rounded col-lg-8 col-sm-8 shadow p-0" style="background-color: white;">
+
+            <div class="rounded-top border border-dark bg-white py-2 d-flex justify-content-center align-items-center">
+                <span style="color: #FFD700; font-weight: 700; font-size: large;">FUNDIR COMPRAS</span>
+            </div>
+
+            <div class="rounded-bottom p-2 border border-dark">
+                   
+                    LISTA DE BARRAS:
+                    <div style="background-color: #D9D9D9;" class="p-2 mb-3">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Gramos</th>
+                                    <th scope="col">Leyau</th>
+                                    <th scope="col">Leyag</th>
+                                    <th scope="col">Selección</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (barra of barras; track barra.id) {
+                                    <tr>
+                                        <th scope="row">{{barra.id}}</th>
+                                        <td>{{barra.gramos}}</td>
+                                        <td>{{barra.leyOro}}</td>
+                                        <td>{{barra.leyPlata}}</td>
+                                        <td>
+                                            <input type="checkbox" (change)="seleccionarBarra(barra.id!)">
+                                        </td>
+                                    </tr>
+                                }                               
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <div class="row p-3">
+                        <div class="col text-center">
+                            <button routerLink="" class="btn" style="background-color: #000000; min-width: 220px;">
+                                <span class="h6" style="color: #FFD700;">CANCELAR</span>
+                            </button>
+                        </div>
+                        <div class="col text-center">
+                            <button (click)="submit()" class="btn" style="background-color: #FFD700; min-width: 220px;">
+                                <span class="h6">INGRESAR</span>
+                            </button>
+                        </div>
+
+                    </div>
+            </div>
+
+
+
+        </div>
+
+        <!-- espacio  para el footer -->
+
+    </div>
+
+
+</section>

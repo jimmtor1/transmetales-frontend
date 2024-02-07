@@ -1,0 +1,151 @@
+<section class="container pb-1">
+
+
+
+    <div class="d-flex justify-content-center align-items-center my-4">
+
+        <div class="rounded col-lg-8 col-sm-8 shadow p-0" style="background-color: white;">
+
+            <div class="rounded-top border border-dark bg-white py-2 d-flex justify-content-center align-items-center">
+                <span style="color: #FFD700; font-weight: 700; font-size: large;">COMPRAR MINERAL</span>
+            </div>
+
+            <div class="rounded-bottom p-2 border border-dark">
+
+                
+                <div class="px-5 mt-3">
+
+                    INFORMACIÓN DEL PROVEEDOR:
+                    <div style="background-color: #D9D9D9;" class="p-2">
+
+                        <div class="row mb-3">
+
+                            <div class="col-5">
+                                <input type="text" class="form-control" placeholder="Cédula" id="cedula" name="cedula"
+                                    aria-describedby="cedula" [(ngModel)]="cedula"/>
+                            </div>
+
+                            <div class="col-4">
+                                <button style="background-color: #FFD700; font-size: medium;" class="form-control"
+                                   (click)="getMineroName()" aria-describedby="buscarButton">Buscar</button>
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <input type="text" class="form-control" id="cedula" name="nombre" aria-describedby="nombre"
+                                readonly="false" value="{{nombreMinero}}"/>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <form [formGroup]="compraForm" (ngSubmit)="submit()" class="px-5 mt-3">
+
+                    INFORMACIÓN DEL MINERAL:
+                    <div style="background-color: #D9D9D9;" class="p-2 mb-3">
+
+                        <div class="row mb-3">
+
+                            <div class="col-6">
+                                <label for="mineral" class="form-label">TIPO MINERAL:</label>
+                                <select formControlName="mineral" name="mineral" class="form-select" style="background-color: #FFD700;" id="mineral">
+                                    <option value=0>--SELECCIONE--</option>
+                                    <option value=1>ORO</option>
+                                    <option value=2>PLATA</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="row mb-3">
+
+                            <div class="col-6">
+                                <label for="gramos" class="form-label">GRAMOS:</label>
+                                <input formControlName="gramos" type="number" class="form-control" id="gramos" name="gramos"
+                                    aria-describedby="gramos" />
+                            </div>
+
+                        </div>
+
+                        <div class="row mb-3">
+
+                            <div class="col">
+                                <label for="leuau" class="form-label">LEY ORO:</label>
+                                <input (change)="calcFinosau()" formControlName="leyOro" type="number" class="form-control" id="leuau" name="leuau"
+                                    aria-describedby="Ley oro" />
+                            </div>
+
+                            <div class="col">
+                                <label for="finosau" class="form-label">FINOS ORO:</label>
+                                <input readonly type="number" value="{{finosau}}" class="form-control" id="finosau" name="finosau"
+                                    aria-describedby="finos oro" />
+                            </div>
+
+                        </div>
+
+                        <div class="row mb-3">
+
+                            <div class="col">
+                                <label for="leuaug" class="form-label">LEY PLATA:</label>
+                                <input (change)="calcFinosag()" formControlName="leyPlata" type="number" class="form-control" id="leuag" name="leuag"
+                                    aria-describedby="Ley plata" />
+                            </div>
+
+                            <div class="col">
+                                <label for="finosag" class="form-label">FINOS PLATA:</label>
+                                <input readonly type="number" class="form-control" id="finosag" name="finosag"
+                                    aria-describedby="finos plata" value="{{finosag}}"/>
+                            </div>
+
+                        </div>
+
+                       
+
+                    </div>
+
+                    INFORMACIÓN DEL PAGO:
+                    <div style="background-color: #D9D9D9;" class="py-3 px-5 mb-3">
+
+                        <div class="row">
+                            <div class="col fs-4">
+                                NETO A COBRAR:
+                            </div>
+                          <div class="col">
+                            <input formControlName="precio" type="number" class="form-control fs-4" placeholder="$ 0" id="precio" name="precio"
+                            aria-describedby="neto a cobrar" />
+                          </div>
+                        </div>
+
+                    </div>
+                   
+
+                    <div class="row p-3">
+                        <div class="col text-center">
+                            <button routerLink="" class="btn" style="background-color: #000000; min-width: 220px;">
+                                <span class="h6" style="color: #FFD700;">CANCELAR</span>
+                            </button>
+                        </div>
+                        <div class="col text-center">
+                            <button type="submit" class="btn" style="background-color: #FFD700; min-width: 220px;">
+                                <span class="h6">INGRESAR</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+
+
+        </div>
+
+        <!-- espacio  para el footer -->
+
+    </div>
+
+
+
+
+</section>
